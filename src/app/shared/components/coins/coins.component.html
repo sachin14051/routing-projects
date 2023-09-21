@@ -1,0 +1,24 @@
+
+    <input class="form-control mt-2" [(ngModel)]="searchValue" placeholder="Search" >
+    
+  
+  <table class="table mt-2 table-bordered teble-responsive">
+  
+    <thead>
+        <th>sr no</th>
+        <th>name</th>
+        <th>price</th>
+        <th>symbol</th>
+        <th>volume</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of coinsArray  | search : searchValue; let i = index">
+            <td> {{i+1}}</td>
+            <td> {{s.name }}</td>
+            <td> {{s. market_data.current_price.inr + " INR" }} </td>
+            <td> <img src={{s.image.thumb}} alt="logo"> </td>
+            <td> {{s.market_data.total_supply }}</td>
+
+        </tr>
+    </tbody>
+</table>
