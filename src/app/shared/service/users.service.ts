@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Iuser } from '../model/model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +26,25 @@ export class UsersService {
   ];
 
 
-  constructor() { }
+  constructor(private _router :Router) { }
 
   getAllUsers() {
     return this.usersArray
+  }
+
+  getSingleUser(id:string){
+    return this.usersArray.find(user =>{
+      return user.uid === id
+    })
+  }
+
+  getUpdateUser(userObj:Iuser){
+      return this.usersArray.forEach(ele =>{
+             if(ele.uid ===userObj.uid) {
+              ele.fname = userObj.fname  ;
+              this._router.navigate(['/users'])
+             }
+
+      })
   }
 }

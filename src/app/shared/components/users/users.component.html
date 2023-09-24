@@ -9,7 +9,16 @@
                       {{p.fname}}
                 </li>
             </ul>
-            
+            <div class="text-right">
+           <button class="btn btn-primary btn-block mt-2" (click)="onaddUser()">add user</button>
+
+                <button class="btn btn-warning  btn-block"
+                
+                [routerLink]="['/products']"
+                >
+                    products
+                </button>
+            </div>
         </div>
     </div>
 </div>

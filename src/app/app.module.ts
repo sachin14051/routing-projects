@@ -15,6 +15,10 @@ import { FormsModule } from '@angular/forms';
 import { UsersComponent } from './shared/components/users/users.component';
 import { UserComponent } from './shared/components/user/user.component';
 import { ProductComponent } from './shared/components/product/product.component';
+import { MaterialModule } from './shared/module/material.module';
+import { CoinComponent } from './shared/components/coin/coin.component';
+import { EditUserComponent } from './shared/components/edit-user/edit-user.component';
+import { EditProductComponent } from './shared/components/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +32,17 @@ import { ProductComponent } from './shared/components/product/product.component'
     UsersComponent,
     UserComponent,
     ProductComponent,
+    CoinComponent,
+    EditUserComponent,
+    EditProductComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,6 +5,11 @@ export interface Iuser{
 
 export interface Iproduct{
     pname:string,
-    pid:string,
-    pstatus:string
+    pid:string, 
+    pstatus :prodctStatus
+   
 }
+
+
+export  type prodctStatus= "inProgress"   | "dispatched" | "delivered"
+

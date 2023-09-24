@@ -1,1 +1,15 @@
-<p>product works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <mat-card class="example-card mt-5">
+                <mat-card-header>
+                    <mat-card-title>{{productObj.pname}}</mat-card-title>
+                    <mat-card-subtitle>{{productObj.pstatus}}</mat-card-subtitle>
+
+                </mat-card-header>
+           </mat-card>
+           <button class="btn btn-primary mt-3"
+           [routerLink]="['editProduct']">edit product</button>
+        </div>
+    </div>
+</div>

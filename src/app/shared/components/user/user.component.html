@@ -1,1 +1,17 @@
-<p>user works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <mat-card class="example-card mt-5">
+                <mat-card-header>
+                    <mat-card-title>{{userObj.fname}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-footer>
+                </mat-card-footer>
+            </mat-card>
+
+            <button class="btn btn-warning mt-3" [routerLink]="['/users','bebbdjyje']">change user</button>
+            <button class="btn btn-primary mt-3 ml-3" [routerLink]="['/users',userObj.uid,'edit']">edit user</button>
+
+        </div>
+    </div>
+</div>

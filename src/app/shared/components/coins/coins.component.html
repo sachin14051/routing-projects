@@ -12,7 +12,10 @@
         <th>volume</th>
     </thead>
     <tbody>
-        <tr *ngFor="let s of coinsArray  | search : searchValue; let i = index">
+        <tr *ngFor="let s of coinsArray  | search : searchValue; let i = index"
+        
+        [routerLink]="['/coin', s.name]"
+        >
             <td> {{i+1}}</td>
             <td> {{s.name }}</td>
             <td> {{s. market_data.current_price.inr + " INR" }} </td>

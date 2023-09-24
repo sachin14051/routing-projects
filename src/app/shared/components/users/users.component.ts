@@ -16,4 +16,10 @@ export class UsersComponent implements OnInit {
    this.usersArray = this._usersservice.getAllUsers()
   }
 
+  
+  onaddUser(){
+    
+  }
+ 
+
 }
