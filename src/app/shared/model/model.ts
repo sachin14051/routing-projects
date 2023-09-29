@@ -1,8 +1,10 @@
 export interface Iuser{
     fname:string,
     uid:string,
-    userRole:"admin" | "user"
+    userRole:UserRoleStatus
 }
+
+export type UserRoleStatus = "admin" | "user"
 
 export interface Iproduct{
     pname:string,

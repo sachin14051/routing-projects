@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Iuser } from '../../model/model';
+import { Iuser, UserRoleStatus } from '../../model/model';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../../service/users.service';
+import { IdService } from '../../service/id.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -13,7 +14,8 @@ export class EditUserComponent implements OnInit {
   userId !: string;
   userObj !: Iuser;
   constructor(private _route : ActivatedRoute,
-               private _userService: UsersService) { }
+               private _userService: UsersService,
+               private _getId : IdService) { }
 
   ngOnInit(): void {
      this.userId = this._route.snapshot.params['userdId'];
@@ -36,8 +38,14 @@ export class EditUserComponent implements OnInit {
     this._userService.getUpdateUser(obj)
   }
 
-  onaddUser(){
-    
+  onaddUser(fname:string){
+      let obj :Iuser ={
+        fname: fname,
+        uid: this._getId.getId(),
+        userRole:"admin"
+      }
+      console.log(obj)
+      this._userService.getAdduser(obj)
   }  
 
 }

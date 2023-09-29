@@ -59,4 +59,9 @@ export class UsersService {
        this._router.navigate(['/users'])
 
   }
+
+  getAdduser(obj:Iuser){
+    this.usersArray.push(obj);
+    this._router.navigate(['/users'])
+  }
 }
