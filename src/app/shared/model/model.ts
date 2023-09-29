@@ -1,12 +1,14 @@
 export interface Iuser{
     fname:string,
-    uid:string
+    uid:string,
+    userRole:"admin" | "user"
 }
 
 export interface Iproduct{
     pname:string,
     pid:string, 
-    pstatus :prodctStatus
+    pstatus :prodctStatus,
+    canReturn : boolean
    
 }
 

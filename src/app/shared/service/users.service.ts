@@ -9,19 +9,23 @@ export class UsersService {
   usersArray: Array<Iuser> = [
     {
       fname: "jhon",
-      uid: "bebbde"
+      uid: "a",
+      userRole:"admin"
     },
     {
       fname: "dow",
-      uid: "bebbdjyje"
+      uid: "b",
+      userRole:"user"
     },
     {
       fname: "may",
-      uid: "gtgtgt"
+      uid: "c",
+      userRole:"admin"
     },
     {
       fname: "donald",
-      uid: "bebferewrbde"
+      uid: "d",
+      userRole:"user"
     }
   ];
 
@@ -46,5 +50,13 @@ export class UsersService {
              }
 
       })
+  }
+
+  getDeleteUser(id:string){
+       let getIndex = this.usersArray.findIndex(ele =>( ele.uid===id) );
+
+       this.usersArray.splice(getIndex,1)
+       this._router.navigate(['/users'])
+
   }
 }

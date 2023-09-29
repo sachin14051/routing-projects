@@ -26,5 +26,10 @@ export class UserComponent implements OnInit {
     })
   }
 
+  onDeleteHnadler(id:string){
+      this._userService.getDeleteUser(id)
+      
+  }
+
 
 }

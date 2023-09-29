@@ -10,22 +10,29 @@ productsArray: Array<Iproduct> =[
   {
     pname: "samsung",
     pid:"mwswmffefims",
-    pstatus :"dispatched"
+    pstatus :"dispatched",
+    canReturn:false
   },
   {
     pname: "iphone 15",
     pid:"mwswmfefefims",
-    pstatus :"inProgress"
+    pstatus :"inProgress",
+    canReturn:true
+
   },
   {
     pname: "blackberry",
     pid:"mwswrrzafmims",
-    pstatus :"inProgress"
+    pstatus :"inProgress",
+    canReturn:false
+
   },
   {
     pname: "one plus ",
     pid:"mwswmhghims",
-    pstatus :"inProgress"
+    pstatus :"inProgress",
+    canReturn:true
+
   },
 
 ]

@@ -1,9 +1,17 @@
 <div class="form-group">
     <label for="fname">fname</label>
-    <input type="text" class="form-control" [value]="userObj.fname" #fname>
+    <input type="text" class="form-control" [value]="userObj ? userObj.fname : ''" #fname [disabled]="userrole">
 </div>
 <div class="text-right">
    
-    <button class="btn btn-primary" (click)="onUpdateUser(fname)">update user</button>
+    <button class="btn btn-primary" (click)="onUpdateUser(fname)"
+    *ngIf="userId; else addUser">update user</button>
+
+
+
+    <ng-template  #addUser>
+        <button class="btn btn-primary" (click)="onUpdateUser(fname)">add user</button> 
+    </ng-template>
+   
 </div>
 

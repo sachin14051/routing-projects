@@ -4,16 +4,16 @@
             <ul class="list-group mt-3">
               <li class="list-group-item"  *ngFor="let p of usersArray"
                [routerLink]="['/users', p.uid]"
-                
+               [queryParams]="{canEditUser :p.userRole}" 
                >
                       {{p.fname}}
                 </li>
             </ul>
             <div class="text-right">
-           <button class="btn btn-primary btn-block mt-2" (click)="onaddUser()">add user</button>
+           <button class="btn btn-primary btn-block mt-2" (click)="onaddUser()"
+           [routerLink]="['adduser']">add user</button>
 
                 <button class="btn btn-warning  btn-block"
-                
                 [routerLink]="['/products']"
                 >
                     products

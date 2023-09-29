@@ -1,14 +1,15 @@
 <div class="form-group">
     <label for="pname">pname</label>
-    <input type="text" class="form-control" #pname [value]="productObj.pname">
-    <select class="form-control mt-2"  [value]="productObj.pstatus" #status>
+    <input type="text" class="form-control" #pname [value]="productObj.pname" [disabled]="productObj.canReturn" >
+    <select class="form-control mt-2"  [value]="productObj.pstatus" #status [disabled]="productObj.canReturn">
         <option value="inProgress">inProgress</option>
         <option value="dispatched">dispatched</option>
         <option value="delievered">delievered</option>
     </select>
 </div>
 <div class="text-right">
-    <button class="btn btn-primary" (click)="onUpdateProduct(pname,status)"> update product</button>
+    <button class="btn btn-primary" (click)="onUpdateProduct(pname,status)"
+   > update product</button>
     <button class="btn btn-danger ml-2" (click)="onDeleteProduct()"> delete product</button>
 
 </div>

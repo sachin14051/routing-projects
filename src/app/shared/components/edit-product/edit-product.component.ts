@@ -24,7 +24,8 @@ export class EditProductComponent implements OnInit {
        let obj :Iproduct ={
         pname : pname.value as string,
         pstatus : status.value as prodctStatus,
-        pid : this.productId
+        pid : this.productId,
+        canReturn:this.productObj.canReturn
        }
        this._productService.getUpdatePrdouct(obj)
   }
