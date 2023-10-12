@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,  } from '@angular/router';
+import { Router, } from '@angular/router';
+import { AuthServiceService } from '../../service/auth-service.service';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,14 @@ import { Router,  } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private _routes:Router) { }
+  loginStatus: boolean = false
+  loginFormStatus : boolean = true
+  constructor(private _auth:AuthServiceService) { }
 
   ngOnInit(): void {
   }
-  
-  onSignIn(){
-    this._routes.navigate(['/users'])
+
+  onsubmit(email:string,password:string){
+    this._auth.logIn(email,password)
   }
 }

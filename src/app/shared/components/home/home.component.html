@@ -1,24 +1,65 @@
-<div class="container">
-    <div class="form">
-      <h3 class="title">Login to Routing</h3>
-      <form>
-        <div class="form-group">
-          <input type="text" required/><label>Username</label>
+<div class="main">
+  <div class="container" >
+    <div class="row" id="forms">
+      <div class="col-md-6" >
+        <div class="card" *ngIf="loginFormStatus">
+          <h3 class="p-2 bg-info">log in</h3>
+          <div class="card-body">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="email" #email>
+              <span class="input-group-text">
+                <mat-icon>mail</mat-icon>
+              </span>
+            </div>
+            <div class="input-group mt-2">
+              <input type="text" class="form-control" placeholder="password" #password>
+              <span class="input-group-text">
+                <mat-icon>lock</mat-icon>
+              </span>
+            </div>
+            <div class="text-right mt-2">
+              <button mat-raised-button color="accent" type="submit" (click)="onsubmit(email.value,password.value)"> submit</button>
+            </div>
+            <p class="signinPara">
+              <a href="javascript:;"
+              
+              (click)="loginFormStatus=!loginFormStatus">don't have account</a>
+            </p>
+          </div>
         </div>
-        <div class="form-group">
-          <input type="password" required/><label>Password</label>
-        </div>
-        <!-- <input type="button" value="Sign In" class="submit" >  -->
-        <button class="btn btn-primary btn-block mb-3" (click)="onSignIn()">sign in</button>
 
-
-        <div class="row">
-          <p>Not Yet Registered? <a href="#">Sign Up</a></p>
+        <!-- sinup -->
+        <div class="card signUp" *ngIf="!loginFormStatus">
+          <h3 class="p-2 bg-info">sign up</h3>
+          <div class="card-body">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Username">
+              <span class="input-group-text">
+                <mat-icon>mail</mat-icon>
+              </span>
+            </div>
+            <div class="input-group mt-2">
+              <input type="text" class="form-control" placeholder="password">
+              <span class="input-group-text">
+                <mat-icon>lock</mat-icon>
+              </span>
+            </div>
+            <div class="input-group mt-2">
+              <input type="text" class="form-control" placeholder="password">
+              <span class="input-group-text">
+                <mat-icon>lock</mat-icon>
+              </span>
+            </div>
+            <div class="text-right mt-2">
+              <button mat-raised-button color="accent"> submit</button>
+            </div>
+            <p class="signupPara">
+              <a href="javascript:;"
+              (click)="loginFormStatus=!loginFormStatus">alrerdy have account</a>
+            </p>
+          </div>
         </div>
-      </form>
-    </div>
-    <div class="last">
-      <a href="#">T&C</a>
-      <a href="#">Policy</a>
+      </div>
     </div>
   </div>
+</div>

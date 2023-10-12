@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
-import { RoutingModule } from './shared/module/routing.module';
+import { RoutingModule } from './routing.module';
 import { HomeComponent } from './shared/components/home/home.component';
 import { ProductsComponent } from './shared/components/products/products.component';
 import {HttpClientModule} from "@angular/common/http";
@@ -16,6 +16,11 @@ import { ProductComponent } from './shared/components/product/product.component'
 import { MaterialModule } from './shared/module/material.module';
 import { EditUserComponent } from './shared/components/edit-user/edit-user.component';
 import { EditProductComponent } from './shared/components/edit-product/edit-product.component';
+
+import {MatIconModule, } from '@angular/material/icon'
+import {MatButtonModule} from '@angular/material/button'
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { SuperAdminComponent } from './shared/components/super-admin/super-admin.component'
 
 @NgModule({
   declarations: [
@@ -29,6 +34,9 @@ import { EditProductComponent } from './shared/components/edit-product/edit-prod
     ProductComponent,
     EditUserComponent,
     EditProductComponent,
+    SuperAdminComponent,
+    
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,12 @@ import { EditProductComponent } from './shared/components/edit-product/edit-prod
     RoutingModule,
     HttpClientModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    MatIconModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
